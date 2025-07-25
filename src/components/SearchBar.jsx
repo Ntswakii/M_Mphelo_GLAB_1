@@ -16,8 +16,14 @@ const SearchBar = ({ searchTerm, setSearchTerm }) => {
         marginBottom: 20,
         marginRight: 10,
       }}
+
+      
     />
+    
+
   );
+
+  
 };
 
 export default SearchBar;
