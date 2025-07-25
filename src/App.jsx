@@ -38,14 +38,28 @@ function App() {
   <p style={{ color: 'red', fontWeight: 'bold' }}>No products found.</p>
 ) : (
   filteredProducts.map((product) => (
-    <div key={product.id}>
+    <div 
+      key={product.id} 
+      style={{
+        border: '1px solid #ccc',
+        borderRadius: 10,
+        padding: 15,
+        marginBottom: 15,
+        backgroundColor: '#fff',
+        boxShadow: '2px 2px 10px rgba(0,0,0,0.1)',
+        width: 300
+      }}
+    >
       <h3>{product.name}</h3>
-      <p>Category: {product.category}</p>
-      <p>Price: R{product.price}</p>
-      <p>{product.inStock ? "In Stock" : "Out of Stock"}</p>
+      <p><strong>Category:</strong> {product.category}</p>
+      <p><strong>Price:</strong> R{product.price}</p>
+      <p style={{ color: product.inStock ? 'green' : 'red' }}>
+        {product.inStock ? "In Stock" : "Out of Stock"}
+      </p>
     </div>
   ))
 )}
+
 
     </div>
   );
