@@ -1,17 +1,32 @@
 import { useState } from 'react'
-
+import productsData from './data';
 
 function App() {
- const [Products, setProducts] = useState([{
-
- }])
-
+  const [products, setProducts] = useState(productsData); 
   return (
     <>
-     <div className='App' style={{
+     <div className='App' 
+      style={{
+      backgroundColor: 'lightcyan',
+      margin: 0,
+      padding: 20,
+      fontFamily: 'sans-serif',
+    }}>
 
+      <h1 style={{textAlign: 'center',}}>Product Catalog</h1> 
+      <input 
+        type="text" 
+        placeholder='Search for an item...'
+        
+        style={{
+        width: 200,
+        height: 30,
+        border: 'none',
+        borderRadius: 8,
+      }}>
 
-     }}>
+      </input>
+
       {products.map((product) => (
       <div key={product.id}>
       <h3>{product.name}</h3>
