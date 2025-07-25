@@ -34,14 +34,19 @@ function App() {
         }}
       />
 
-      {filteredProducts.map((product) => (
-        <div key={product.id}>
-          <h3>{product.name}</h3>
-          <p>Category: {product.category}</p>
-          <p>Price: R{product.price}</p>
-          <p>{product.inStock ? "In Stock" : "Out of Stock"}</p>
-        </div>
-      ))}
+{filteredProducts.length === 0 ? (
+  <p style={{ color: 'red', fontWeight: 'bold' }}>No products found.</p>
+) : (
+  filteredProducts.map((product) => (
+    <div key={product.id}>
+      <h3>{product.name}</h3>
+      <p>Category: {product.category}</p>
+      <p>Price: R{product.price}</p>
+      <p>{product.inStock ? "In Stock" : "Out of Stock"}</p>
+    </div>
+  ))
+)}
+
     </div>
   );
 }
